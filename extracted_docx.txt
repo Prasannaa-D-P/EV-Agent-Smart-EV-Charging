@@ -1,0 +1,287 @@
+
+CHENNAI EV CHARGING STATION DATA
+EV-Agent – Agentic AI Powered Smart EV Charging Platform
+Purpose: Reference dataset for the EV-Agent prototype, covering EV charging-station locations in Chennai, Tamil Nadu. Coordinate-level records are intended as seed data; live charger availability must be verified through current operator/TNEV sources before being represented as real-time.
+1. Data Source and Usage Notes
+Primary coordinate reference: Bureau of Energy Efficiency (BEE) public EV charging-station dataset.
+Current-status reference: Tamil Nadu TNEV / TNGECL charger-finder platform and individual charging-network operator listings.
+This document separates location information from live availability. A station being listed at a location does not mean a charger is available at this moment.
+Approximate coordinates from secondary listings should not be treated as production-grade geospatial coordinates until independently verified.
+For the EV-Agent prototype, store data_source, last_verified_at, and is_demo fields for every station.
+2. Chennai EV Charging Station Reference Data
+
+No.
+Operator
+Station / Location
+Area
+Latitude
+Longitude
+Connector / Type
+Power
+
+1
+Ather
+St. Thomas Mount Railway Station
+St. Thomas Mount
+12.994410
+80.199288
+LEV DC
+3.3 kW
+
+2
+Ather
+10th Cross St, Indira Nagar
+Adyar
+12.996663
+80.251779
+LEV DC
+3.3 kW
+
+3
+Ather
+Ather Space, Mount Road
+Guindy
+13.012477
+80.220603
+LEV DC
+3.3 kW
+
+4
+Ather
+Kotturpuram Railway Station
+Kotturpuram
+13.013870
+80.248060
+LEV DC
+3.3 kW
+
+5
+Tata Power
+Chennai One
+Thoraipakkam
+12.948492
+80.232697
+Type 2 AC
+7.4 kW
+
+6
+Tata Power
+Chennai One
+Thoraipakkam
+12.945845
+80.231571
+Type 2 AC
+7.4 kW
+
+7
+Tata Power
+Covelong Beach
+Covelong
+12.797170
+80.247583
+Type 2 AC
+7.4 kW
+
+8
+Tata Power
+Tanishq / 100 Cathedral Road
+Gopalapuram
+Approx.
+Approx.
+CCS2 / AC
+Varies
+
+9
+Tata Power
+The Park / 601 Anna Salai
+Nungambakkam
+Approx.
+Approx.
+CCS2
+Varies
+
+10
+Tata Power
+164 Dr. Radhakrishnan Salai
+Mylapore
+Approx.
+Approx.
+CCS2 + Type 2
+30 / 7 kW
+
+11
+Zeon
+X Raptee HV HQ
+Mugalivakkam
+Approx.
+Approx.
+CCS2
+30 kW
+
+12
+Zeon
+RMZ One Paramount
+Porur
+Approx.
+Approx.
+CCS2
+30 kW
+
+13
+Zeon
+Pantheon Road
+Egmore
+Approx.
+Approx.
+CCS2
+60 kW
+
+14
+Zeon
+Darmapuram, 6th Street
+T. Nagar
+Approx.
+Approx.
+CCS2
+30 kW
+
+15
+Zeon
+Domestic Airport Parking C-03
+Meenambakkam
+Approx.
+Approx.
+Type 2
+7.4 kW
+
+16
+Zeon
+Radisson Blu Hotel
+Palavanthangal
+Approx.
+Approx.
+Type 2
+7.4 kW
+
+17
+Yocharge
+Anna Salai
+Central Chennai
+Approx.
+Approx.
+CCS2
+60 kW
+
+18
+Statiq
+Express Estate
+Royapettah
+Approx.
+Approx.
+CCS2
+60 kW
+
+19
+Mahindra
+Egmore Metro Car Parking
+Egmore
+Approx.
+Approx.
+CCS2
+Varies
+
+20
+TEDA
+NPKRR Maaligai, 144 Anna Salai
+Thousand Lights
+Approx.
+Approx.
+AC
+Varies
+3. Recommended Database Fields for EV-Agent
+
+Field
+Description
+
+station_id
+Unique station identifier
+
+station_name
+Charging-station name
+
+operator
+Charging-network/operator name
+
+address
+Full station address
+
+city
+Chennai
+
+area
+Locality / neighborhood
+
+latitude
+Station latitude
+
+longitude
+Station longitude
+
+phone
+Station/contact number, if available
+
+opening_time
+Opening time
+
+closing_time
+Closing time
+
+is_24_hours
+24-hour operating flag
+
+station_status
+Overall station status
+
+charger_id
+Unique charger identifier
+
+connector_type
+CCS2, Type 2, LEV DC, etc.
+
+charger_type
+AC or DC
+
+power_kw
+Charging power in kW
+
+status
+Available, occupied, reserved, maintenance, offline
+
+price_per_kwh
+Price where verified
+
+last_verified_at
+Timestamp of most recent verification
+
+data_source
+BEE, TNEV, operator, etc.
+
+is_demo
+Whether the record is simulated/demo data
+4. Data Quality Classification
+Use the following classification in the EV-Agent database:
+VERIFIED_COORDINATE: Exact latitude/longitude obtained from a coordinate-bearing source.
+OPERATOR_LISTING: Station reported by an operator or current directory, requiring coordinate verification if exact coordinates are not supplied.
+LIVE_STATUS: Current availability/status obtained from a live or current charging-network source.
+ESTIMATED: Value calculated by EV-Agent, such as estimated travel time or charging cost.
+DEMO: Simulated data used for development/testing and not presented as live infrastructure.
+5. Important Implementation Rule
+Do not use approximate coordinates as final production coordinates. Before inserting a station into the production database, verify the exact location and current operational status through TNEV/TNGECL, the relevant charging operator, or another authoritative current source. Store the verification timestamp and source.
+6. Suggested JSON Record Structure
+{  "station_id": "CHN-ZEON-PORUR-001",  "station_name": "Zeon Charging Station Porur",  "operator": "Zeon",  "city": "Chennai",  "area": "Porur",  "latitude": 13.035,  "longitude": 80.156,  "connector_type": "CCS2",  "charger_type": "DC",  "power_kw": 30,  "status": "AVAILABLE",  "price_per_kwh": null,  "is_demo": false,  "data_source": "operator_listing",  "last_verified_at": null}
+7. References
+Bureau of Energy Efficiency (BEE) – EV Public Charging Station dataset.
+Tamil Nadu TNEV / TNGECL – EV charger discovery and charging infrastructure platform.
+Charging-network operator listings including Ather, Tata Power, Zeon, Statiq and Yocharge.
+
+EV-Agent | Chennai EV Charging Reference Dataset

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>EV-Agent</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'primary': '#006a3b', 'inverse-on-surface': '#ecf0ff', 'inverse-surface': '#273143', 'error-container': '#ffdad6', 'on-secondary': '#ffffff', 'surface-container-low': '#f0f3ff', 'secondary': '#386380', 'surface-container-highest': '#d9e3fb', 'on-tertiary-fixed-variant': '#4918c8', 'primary-fixed-dim': '#64dd93', 'on-background': '#111c2d', 'tertiary-fixed': '#e6deff', 'on-error-container': '#93000a', 'secondary-container': '#b2dcfe', 'error': '#ba1a1a', 'surface': '#f9f9ff', 'primary-fixed': '#81faad', 'tertiary-container': '#7857f8', 'surface-dim': '#d0daf2', 'surface-container': '#e8eeff', 'primary-container': '#00864b', 'surface-container-high': '#dfe8ff', 'background': '#f9f9ff', 'outline': '#6d7a6f', 'on-secondary-fixed': '#001e2f', 'surface-tint': '#006d3c', 'secondary-fixed': '#c9e6ff', 'tertiary-fixed-dim': '#cabeff', 'surface-container-lowest': '#ffffff', 'on-tertiary-fixed': '#1c0062', 'on-tertiary': '#ffffff', 'on-tertiary-container': '#fffbff', 'on-primary-fixed-variant': '#00522c', 'secondary-fixed-dim': '#a1cced', 'on-primary-container': '#f6fff4', 'on-primary': '#ffffff', 'on-secondary-fixed-variant': '#1d4b67', 'on-secondary-container': '#37627f', 'on-primary-fixed': '#00210e', 'inverse-primary': '#64dd93', 'surface-bright': '#f9f9ff', 'on-error': '#ffffff', 'outline-variant': '#bdcabd', 'tertiary': '#5f3add', 'on-surface-variant': '#3e4a40', 'surface-variant': '#d9e3fb', 'on-surface': '#111c2d' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: { 'space-lg': '1.5rem', 'space-xs': '0.25rem', 'gutter': '1rem', 'margin': '1rem', 'space-xl': '2rem', 'space-md': '1rem', 'space-sm': '0.5rem' }, fontFamily: { 'headline-md': ['Inter'], 'label-sm': ['Inter'], 'body-sm': ['Inter'], 'headline-lg': ['Inter'], 'label-md': ['Inter'], 'metric-display-mobile': ['Inter'], 'headline-xl-mobile': ['Inter'], 'metric-display': ['Inter'], 'body-md': ['Inter'], 'label-lg': ['Inter'], 'headline-sm': ['Inter'], 'body-lg': ['Inter'], 'headline-lg-mobile': ['Inter'], 'headline-xl': ['Inter'] }, fontSize: { 'headline-md': ['20px', { lineHeight: '28px', letterSpacing: '-0.01em', fontWeight: '600' }], 'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.03em', fontWeight: '600' }], 'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.01em', fontWeight: '400' }], 'headline-lg': ['30px', { lineHeight: '38px', letterSpacing: '-0.015em', fontWeight: '600' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.01em', fontWeight: '500' }], 'metric-display-mobile': ['36px', { lineHeight: '42px', letterSpacing: '-0.025em', fontWeight: '700' }], 'headline-xl-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.015em', fontWeight: '700' }], 'metric-display': ['48px', { lineHeight: '52px', letterSpacing: '-0.03em', fontWeight: '700' }], 'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0em', fontWeight: '400' }], 'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.005em', fontWeight: '500' }], 'headline-sm': ['16px', { lineHeight: '24px', letterSpacing: '0em', fontWeight: '600' }], 'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0em', fontWeight: '400' }], 'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '-0.01em', fontWeight: '600' }], 'headline-xl': ['40px', { lineHeight: '48px', letterSpacing: '-0.02em', fontWeight: '700' }] } } } };</script><style>@layer base { html, body { width: 100vw; min-height: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] pt-safe"><div class="h-20 px-space-md flex flex-col justify-center gap-space-xs"><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Brand logo. - Primary color: #16a05d - Font: inter - Mode: light - Roundness: rounded-md" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VMn25VcOJAt2yBLekUuLNfxZ42Wu4H60JS8lKtCd8eaoiRY_mM42j8skXS_ULAHnnSnGSHrmGu9iie7doBtKeVUq0aE2kcuLAWREXyqyUewqeoyY8QrVyqfHaY7-uumH0QN1kcWxFOMnjtL002E8kc8wbQiA6NMaOWUIy2YcacPxZBl2kZyk64kVFvJCYKuLp9fS7VMaSGRPAb1hSz3r6VwvidCLbQVqg0BVEQfW6oKXgwwbsJD_kMJ0E"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface truncate">EV-Agent</span><span class="px-space-xs py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold tracking-wide uppercase">Live</span></div><div class="flex items-center gap-space-xs"><span class="font-body-sm text-body-sm text-on-surface-variant truncate">Tata Nexon EV Max • 62% SoC</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="relative flex items-center justify-center"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] leading-none flex items-center justify-center font-bold pointer-events-none">3</span></div><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center rounded-full active:scale-95 transition-transform" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V0h3oBE6tEDeRGAqN3G73g6PnKyvcUeLuHZpgncCAC21lLuaLG1gWACvjupkcLDi-OIIin-NFbf4pqSpKDw8iixmpfuxZ3Z1bKMv2jRog2LFxlMhD7vtPdkdYRmygHmdw8fc6tzpPwxk2FlrmqII42UJBnhwugkRkFnuZ09aHwRSaDhsXxEHG29EoRXLQf9NQR5Lj7JtVJZXLeyLgpCcZOvxix8oWX2MXsVNIIqt_i_H5WhFjMCOS6poTc"/></button></div></div><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[15px]">location_on</span><span class="font-label-sm text-label-sm text-on-surface truncate">Anna Nagar, Chennai</span></div><span class="font-label-sm text-label-sm text-on-surface-variant tracking-tight">Map</span></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full relative">
+<!-- Map Canvas & Chennai Vector Corridor Surface -->
+<div class="relative w-full h-[520px] overflow-hidden bg-surface-container-high select-none">
+<!-- Styled Chennai Road Grid & Waterways SVG Canvas -->
+<svg class="absolute inset-0 w-full h-full object-cover" fill="none" viewbox="0 0 420 540" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="50%" cy="50%" id="adagrad" r="50%">
+<stop offset="0%" stop-color="#006a3b" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#006a3b" stop-opacity="0"></stop>
+</radialgradient>
+</defs>
+<!-- Base Urban Topology / Background Fills -->
+<rect fill="#e8eeff" height="540" width="420"></rect>
+<!-- Guindy National Park Green Belt -->
+<path d="M 60,330 C 90,290 170,300 200,340 C 220,370 200,430 150,450 C 90,460 50,410 60,330 Z" fill="#d9e3fb" fill-opacity="0.6"></path>
+<text class="font-label-sm text-[10px] tracking-widest font-semibold uppercase" fill="#3e4a40" fill-opacity="0.45" x="105" y="375">Guindy Forest</text>
+<!-- Adyar River Basin Trace -->
+<path d="M -20,240 Q 80,260 170,225 T 320,210 T 440,245" fill="none" stroke="#b2dcfe" stroke-linecap="round" stroke-width="14"></path>
+<text class="font-label-sm text-[9px] tracking-wider uppercase" fill="#386380" fill-opacity="0.5" x="280" y="200">Adyar River</text>
+<!-- Minor Street Grids -->
+<path d="M 40,40 L 40,500 M 100,20 L 100,520 M 160,20 L 160,520 M 260,20 L 260,520 M 340,20 L 340,520 M 390,20 L 390,520" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2.5"></path>
+<path d="M 10,80 L 410,80 M 10,140 L 410,140 M 10,270 L 410,270 M 10,380 L 410,380 M 10,480 L 410,480" stroke="#ffffff" stroke-opacity="0.8" stroke-width="2.5"></path>
+<!-- Major Arterial Corridors (Anna Salai / GST Road / Kathipara Clover / Inner Ring Rd) -->
+<!-- Anna Salai to GST Road Highway -->
+<path d="M 330,10 L 210,260 L 120,410 L 40,530" stroke="#ffffff" stroke-linecap="round" stroke-width="8"></path>
+<path d="M 330,10 L 210,260 L 120,410 L 40,530" stroke="#d0daf2" stroke-linecap="round" stroke-width="4.5"></path>
+<!-- Inner Ring Road & OMR Spur -->
+<path d="M 10,260 L 410,290" stroke="#ffffff" stroke-linecap="round" stroke-width="7"></path>
+<path d="M 10,260 L 410,290" stroke="#d0daf2" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- Kathipara Grade Separator (Cloverleaf Interchange at center: x=210, y=260) -->
+<circle cx="210" cy="260" fill="none" r="30" stroke="#ffffff" stroke-width="6"></circle>
+<circle cx="210" cy="260" fill="none" r="30" stroke="#64dd93" stroke-dasharray="4 3" stroke-width="2.5"></circle>
+<text class="font-label-sm text-[9px] font-bold tracking-tight" fill="#111c2d" x="175" y="252">Kathipara Jcn</text>
+<!-- Corridor Labels -->
+<text class="font-label-sm text-[10px] font-semibold -rotate-60 tracking-wider" fill="#386380" x="245" y="130">ANNA SALAI</text>
+<text class="font-label-sm text-[10px] font-semibold -rotate-45 tracking-wider" fill="#386380" x="75" y="480">GST ROAD</text>
+<text class="font-label-sm text-[10px] font-semibold tracking-wider" fill="#386380" x="325" y="280">OMR LINK</text>
+<!-- Active Navigation Projected Path (User to Hub) -->
+<path class="animate-pulse" d="M 178,335 C 190,320 205,300 210,265 C 213,240 225,225 242,205" stroke="#006a3b" stroke-dasharray="7 5" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"></path>
+</svg>
+<!-- Top Floating Search & Filter Command Stack -->
+<div class="absolute top-3 inset-x-3 flex flex-col gap-2 z-20">
+<!-- Search Bar -->
+<div class="flex items-center gap-2 h-12 px-3.5 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl shadow-md">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Destination Corridor</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Guindy Industrial Estate, Chennai</span>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Voice Search" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button aria-label="Clear Search" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Filter Chips Carousel -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<!-- Active Filter: Available Now -->
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary text-on-primary shadow-sm flex-shrink-0 active:scale-95 transition-transform" type="button">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
+<span class="font-label-md text-label-md">Available Now (4/8)</span>
+</button>
+<!-- Active Filter: CCS2 -->
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container text-on-primary-container shadow-sm flex-shrink-0 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">ev_charger</span>
+<span class="font-label-md text-label-md">CCS2 Compatible</span>
+</button>
+<!-- Filter: DC Fast -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface shadow-sm flex-shrink-0 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bolt</span>
+<span class="font-label-md text-label-md">DC Fast (&gt;50 kW)</span>
+</button>
+<!-- Filter: Practical Range -->
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface shadow-sm flex-shrink-0 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">battery_charging_full</span>
+<span class="font-label-md text-label-md">Within Range (125 km)</span>
+</button>
+</div>
+</div>
+<!-- Floating Map Controls (Right Dock) -->
+<div class="absolute right-3 top-28 flex flex-col gap-2 z-20">
+<button aria-label="Layers" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container-lowest/95 backdrop-blur-md text-on-surface shadow-md active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</button>
+<button aria-label="Recenter GPS" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container-lowest/95 backdrop-blur-md text-primary shadow-md active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">my_location</span>
+</button>
+<button aria-label="Traffic Density" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container-lowest/95 backdrop-blur-md text-on-surface shadow-md active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">traffic</span>
+</button>
+<div class="flex flex-col bg-surface-container-lowest/95 backdrop-blur-md rounded-xl shadow-md overflow-hidden">
+<button aria-label="Zoom In" class="w-11 h-10 flex items-center justify-center text-on-surface active:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<div class="h-[1px] bg-surface-container"></div>
+<button aria-label="Zoom Out" class="w-11 h-10 flex items-center justify-center text-on-surface active:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+</div>
+</div>
+<!-- Map Station Markers -->
+<!-- Marker 1: User GPS Location Pulse (Guindy Race Course Rd) -->
+<div class="absolute left-[170px] top-[330px] -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none">
+<div class="relative flex items-center justify-center w-8 h-8">
+<span class="absolute w-8 h-8 rounded-full bg-secondary-container opacity-75 animate-ping"></span>
+<span class="relative w-4 h-4 rounded-full bg-secondary shadow-md border-2 border-surface-container-lowest"></span>
+</div>
+<div class="px-2 py-0.5 mt-1 rounded-md bg-inverse-surface/90 text-inverse-on-surface shadow-sm whitespace-nowrap">
+<span class="font-label-sm text-[10px] font-medium tracking-tight">You: Race Course Rd</span>
+</div>
+</div>
+<!-- Marker 2: Chennai EV Hub Guindy (SELECTED PIN) -->
+<div class="absolute left-[245px] top-[195px] -translate-x-1/2 -translate-y-full z-30 flex flex-col items-center cursor-pointer">
+<!-- Floating Badge -->
+<div class="flex items-center gap-1 px-2 py-1 rounded-full bg-primary text-on-primary shadow-lg ring-2 ring-primary-fixed mb-1 animate-bounce">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span class="font-label-sm text-label-sm font-bold">4 Free • 60 kW</span>
+</div>
+<!-- Pin Anchor -->
+<div class="relative flex items-center justify-center w-9 h-9 rounded-full bg-primary text-on-primary shadow-xl">
+<span class="material-symbols-outlined text-[20px]">ev_station</span>
+<span class="absolute -bottom-1 w-2.5 h-2.5 bg-primary rotate-45"></span>
+</div>
+<div class="w-4 h-1.5 mt-1 rounded-full bg-on-surface/20 blur-[1px]"></div>
+</div>
+<!-- Marker 3: T Nagar Station (Amber Pin - 2 Free) -->
+<div class="absolute left-[330px] top-[100px] -translate-x-1/2 -translate-y-full z-10 flex flex-col items-center opacity-90 cursor-pointer">
+<div class="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-surface-container-lowest text-on-surface shadow-md mb-0.5">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="font-label-sm text-[10px] font-semibold">2 Free</span>
+</div>
+<div class="relative flex items-center justify-center w-7 h-7 rounded-full bg-secondary text-on-secondary shadow-md">
+<span class="material-symbols-outlined text-[15px]">ev_station</span>
+<span class="absolute -bottom-0.5 w-2 h-2 bg-secondary rotate-45"></span>
+</div>
+</div>
+<!-- Marker 4: Velachery Hub (Red Pin - Fully Occupied) -->
+<div class="absolute left-[70px] top-[430px] -translate-x-1/2 -translate-y-full z-10 flex flex-col items-center opacity-80 cursor-pointer">
+<div class="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container shadow-sm mb-0.5">
+<span class="font-label-sm text-[10px] font-bold">0/4 Full</span>
+</div>
+<div class="relative flex items-center justify-center w-6 h-6 rounded-full bg-error text-on-error shadow-md">
+<span class="material-symbols-outlined text-[13px]">block</span>
+</div>
+</div>
+<!-- Range Radius Ring Hint -->
+<div class="absolute left-[170px] top-[330px] w-64 h-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/20 pointer-events-none"></div>
+</div>
+<!-- Interactive Slide-Up Bottom Drawer Sheet -->
+<div class="relative -mt-6 z-30 flex flex-col w-full bg-surface-container-lowest rounded-t-[24px] shadow-[0_-8px_24px_rgba(17,28,45,0.08)] overflow-hidden">
+<!-- Top Center Drag Pill Handle -->
+<div class="flex justify-center pt-2.5 pb-1">
+<div class="w-10 h-1 rounded-full bg-surface-container-highest cursor-grab active:bg-outline-variant transition-colors"></div>
+</div>
+<div class="flex flex-col p-4 gap-4">
+<!-- Drawer Header: Station Identity & Verification -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">Chennai EV Hub - Guindy</h2>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span> Verified
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">
+            Plot 14, SIDCO Industrial Estate, Guindy, Chennai 600032
+          </span>
+</div>
+<button aria-label="Close sheet" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:bg-surface-container flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Quick Metrics Strip (Distance, Time, Consumption, SoC Safeguard) -->
+<div class="grid grid-cols-2 gap-2">
+<div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low">
+<div class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container-highest text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Distance &amp; Route</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">3.2 km • 8 min</span>
+<span class="font-label-sm text-[10px] text-secondary">via GST Road Flyover</span>
+</div>
+</div>
+<div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-surface-container-low">
+<div class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary-fixed text-on-primary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">energy_savings_leaf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Arrival Battery</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">59% SoC</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Safe reach (-2.1 kWh)</span>
+</div>
+</div>
+</div>
+<!-- Live Charger Bays Visual Strip -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Live Bay Allocation</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            Real-time Telemetry
+          </span>
+</div>
+<!-- 4-Bay Interactive Horizontal Grid -->
+<div class="grid grid-cols-4 gap-2">
+<!-- Bay 1: Selected & Free -->
+<button class="flex flex-col p-2.5 rounded-xl bg-primary text-on-primary shadow-sm text-left relative overflow-hidden transition-all active:scale-95" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-sm text-[11px] font-bold">BAY 01</span>
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">check_circle</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold mt-1">60 kW</span>
+<span class="font-label-sm text-[10px] opacity-90">CCS2 Dual</span>
+<div class="mt-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary text-[10px] font-bold w-fit">
+              Selected
+            </div>
+</button>
+<!-- Bay 2: In Use (84%) -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container text-on-surface-variant opacity-75">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-sm text-[11px] font-semibold">BAY 02</span>
+<span class="material-symbols-outlined text-[15px]">hourglass_top</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold mt-1">60 kW</span>
+<span class="font-label-sm text-[10px]">CCS2 Dual</span>
+<div class="mt-2 flex flex-col gap-0.5">
+<div class="flex justify-between font-label-sm text-[9px]">
+<span>In Use</span>
+<span>84%</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-[84%] h-full bg-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Bay 3: Free -->
+<button class="flex flex-col p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface text-left transition-all active:scale-95" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-sm text-[11px] font-semibold text-on-surface-variant">BAY 03</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold mt-1">60 kW</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">CCS2 Dual</span>
+<div class="mt-2 inline-flex items-center px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed text-[10px] font-semibold w-fit">
+              Free
+            </div>
+</button>
+<!-- Bay 4: In Use (Type 2) -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container text-on-surface-variant opacity-75">
+<div class="flex items-center justify-between w-full">
+<span class="font-label-sm text-[11px] font-semibold">BAY 04</span>
+<span class="material-symbols-outlined text-[15px]">power_off</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-semibold mt-1">22 kW</span>
+<span class="font-label-sm text-[10px]">Type 2 AC</span>
+<div class="mt-2 inline-flex items-center px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant text-[10px] font-medium w-fit">
+              Occupied
+            </div>
+</div>
+</div>
+</div>
+<!-- Station Amenities & Dynamic Tariff Row -->
+<div class="flex flex-col gap-2 p-3 rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<!-- Amenities Icons with Tooltip Styling -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1 text-on-surface-variant" title="Café on premises">
+<span class="material-symbols-outlined text-[18px] text-secondary">local_cafe</span>
+<span class="font-label-sm text-label-sm">Café</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant" title="Clean Restroom">
+<span class="material-symbols-outlined text-[18px] text-secondary">wc</span>
+<span class="font-label-sm text-label-sm">Restroom</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant" title="24/7 Security Guard">
+<span class="material-symbols-outlined text-[18px] text-secondary">shield</span>
+<span class="font-label-sm text-label-sm">24/7 Guard</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant" title="High Speed Wi-Fi">
+<span class="material-symbols-outlined text-[18px] text-secondary">wifi</span>
+<span class="font-label-sm text-label-sm">Wi-Fi</span>
+</div>
+</div>
+<!-- Operator Badge -->
+<div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[11px] font-medium">
+<span>Relux Power</span>
+</div>
+</div>
+<!-- Tariff Details -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">currency_rupee</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹18.00 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ kWh</span></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">TANGEDCO Grid Off-Peak Rate</span>
+</div>
+</div>
+<!-- Autonomous Agent Co-Pilot Recommendation Tip -->
+<div class="flex items-center gap-3 p-3 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed shadow-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm font-bold text-tertiary uppercase tracking-wider">Agent Dispatch Note</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-fixed leading-tight">
+            Bay 1 pre-reserved for your Nexon EV. Battery conditioning will trigger 4 min prior to arrival.
+          </span>
+</div>
+</div>
+<!-- Sticky Execution Action Bar (Minimum touch target 44px) -->
+<div class="flex items-center gap-2 pt-1 pb-1">
+<!-- Secondary Utility Button: Share / Route -->
+<button aria-label="Share Location" class="h-12 w-12 flex items-center justify-center rounded-xl bg-surface-container-high text-on-surface active:bg-surface-container-highest transition-colors flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[22px]">share</span>
+</button>
+<!-- Primary Booking Button (Full Width, #006a3b / #16a05d) -->
+<button class="flex-1 h-12 flex items-center justify-center gap-2 rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm active:bg-primary-container shadow-md transition-all active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span>Select &amp; Book Bay 1 (60 kW)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 active:scale-95 transition-all text-primary font-semibold" data-path="map" href="#"><span class="material-symbols-outlined text-[22px]">location_on</span><span class="font-label-sm text-label-sm">Map</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="bookings" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-sm text-label-sm">Bookings</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 text-on-surface-variant hover:text-on-surface active:scale-95 transition-all relative" data-path="ai-agent" href="#"><span class="material-symbols-outlined text-[22px] text-tertiary">auto_awesome</span><span class="font-label-sm text-label-sm text-tertiary font-semibold">AI Agent</span><span class="absolute -top-1 right-2 w-2 h-2 rounded-full bg-tertiary animate-pulse"></span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

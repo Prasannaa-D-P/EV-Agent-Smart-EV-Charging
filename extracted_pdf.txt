@@ -1,0 +1,200 @@
+=== PAGE 1 ===
+•Batch – B5
+
+=== PAGE 2 ===
+EV-Agent: Agentic AI Powered Smart EV 
+Charging Platform
+Under the guidance of 
+Ms. R Kannamma 
+Assistant Professor
+Department of Artificial Intelligence & 
+Data Science
+LAD 23701 -Mini  Project Work
+Presented by.
+1.Mr. Prasannaa DP
+2. Mr. Rahul TH
+3. Mr. Sharun SR
+Project Coordinator 
+Ms. R. Anitha 
+Assistant Professor
+Department of Artificial Intelligence & 
+Data Science
+I -Project review on 01.09.26
+Head of the Department 
+Ms. R Kannamma 
+Assistant Professor
+Department of Artificial Intelligence & 
+Data Science
+
+
+=== PAGE 3 ===
+Outline of the Presentation
+• Introduction
+• Objectives
+• Literature Survey
+• Existing System & Problems
+• Scope of the Project
+• Proposed Methodology
+• System Architecture
+• Technologies Used
+• Key Features
+• Implementation
+• Results
+• Future Enhancements
+• Conclusion
+
+=== PAGE 4 ===
+Objectives
+• Optimize EV Charging – Determine the best time and method to charge an 
+electric vehicle efficiently. 
+• Find Available Charging Stations – Recommend suitable nearby charging 
+stations based on availability and user requirements. 
+• Reduce Charging Cost – Suggest cost-effective charging schedules by 
+considering electricity prices and demand. 
+• Enable Autonomous AI Decisions – Use Agentic AI to intelligently plan and 
+manage charging with minimal user intervention. 
+• Improve User Convenience – Provide personalized charging recommendations 
+based on battery level, travel needs, and user preferences. 
+
+=== PAGE 5 ===
+Literature Survey
+Area Methodology Limitations
+Smart EV Charging AI-based charging scheduling. Not fully adaptive.
+EV Prediction ML predicts charging needs. Needs large data.
+Station Recommendation Location and availability-based 
+selection. Availability changes quickly.
+Cost Optimization Optimizes charging cost and energy 
+use. Focuses mainly on cost.
+AI EV Management AI automates charging decisions. Limited integration and 
+autonomy.
+
+=== PAGE 6 ===
+Existing System & Problems
+Existing System
+• Manual Charging : Users manually select when and where to charge. 
+• Basic Charging Apps : Show charging stations and their availability. 
+• Fixed Scheduling : Charging is scheduled using predefined time slots. 
+• Limited AI : Existing systems provide basic recommendations. 
+• Separate Services : Cost, station selection, and charging are handled 
+separately .
+Problems
+• High charging cost during peak hours. 
+• Charging stations may be unavailable when users arrive. 
+• No personalized charging plans. 
+• Limited real-time decision-making. 
+• Requires frequent user intervention.
+
+=== PAGE 7 ===
+Scope of the Project
+•Smart Charging – Optimize charging time based on battery level and user 
+needs. 
+•Station Selection – Identify suitable charging stations based on location 
+and availability. 
+•Cost Optimization – Recommend cost-effective charging options. 
+•Agentic AI – Enable autonomous and intelligent charging decisions. 
+•Personalized Planning – Adapt charging plans according to user 
+preferences. 
+•Energy Efficiency – Promote efficient energy usage and reduce peak 
+demand. 
+
+=== PAGE 8 ===
+Proposed Methodology
+User & EV Details Input
+↓
+Battery Status Analysis
+↓
+Charging Station Data Collection
+↓
+User Requirement Analysis
+↓
+Charging Demand Prediction
+↓
+Station & Time Optimization
+↓
+Agentic AI Decision Making
+↓
+Cost & Energy Optimization
+↓
+Personalized Charging Recommendation
+↓
+Smart Charging & Real-Time Monitoring
+
+=== PAGE 9 ===
+System Architecture
+User
+↓
+EV-Agent Platform
+↓
+Data Collection Module
+↓
+AI Analysis Module
+↓
+Agentic AI Decision Module
+↓
+Charging Optimization Module
+↓
+Charging Station / EV
+↓
+Real-Time Monitoring & Feedback
+
+=== PAGE 10 ===
+Technologies Used
+Technology / Library Purpose
+Python Main programming language
+Flask Backend web framework
+HTML + CSS Frontend structure and styling
+JavaScript Frontend interaction
+Machine Learning Charging demand prediction
+Agentic AI Autonomous charging decision-making
+Pandas Data processing and analysis
+SQLite / MySQL Data storage
+
+=== PAGE 11 ===
+• Smart Charging – Optimizes charging time based on battery status and 
+user needs. 
+• Station Recommendation – Suggests suitable charging stations based on 
+location and availability. 
+• AI Prediction – Predicts charging demand and energy requirements. 
+• Agentic AI – Makes autonomous decisions for efficient charging. 
+• Cost Optimization – Identifies cost-effective charging options. 
+• Personalized Recommendations – Provides charging plans based on user 
+preferences. 
+• Real-Time Monitoring – Monitors charging status and updates 
+recommendations. 
+Key Features & Implementation
+
+=== PAGE 12 ===
+Results
+• Optimal charging time and station are identified. 
+• Charging cost is reduced through smart scheduling. 
+• Charging demand is predicted using AI. 
+• Suitable charging options are recommended to users. 
+• Charging status is monitored in real time. 
+• AI-based decisions reduce manual effort. 
+Outcomes
+• Improved EV charging efficiency. 
+• Reduced charging cost and energy wastage. 
+• Better utilization of charging stations. 
+• Personalized charging experience for users. 
+• Faster and smarter charging decisions. 
+• More convenient and intelligent EV management. 
+Results
+
+=== PAGE 13 ===
+Future Enhancements
+• Integrate real-time EV charging station APIs for live availability. 
+• Add mobile application support for easier access. 
+• Improve AI models for accurate demand and price prediction. 
+• Integrate renewable energy sources such as solar power. 
+• Enable automatic charging control through IoT-enabled EV chargers. 
+• Support multiple EVs and charging stations on a larger scale. 
+Conclusion
+• EV-Agent provides an AI-powered smart EV charging solution. 
+• Agentic AI helps make intelligent and autonomous charging decisions. 
+• The system improves charging efficiency, cost savings, and user convenience. 
+• It provides personalized and optimized charging recommendations. 
+• The platform can be further enhanced for real-time, scalable, and sustainable EV 
+charging management. 
+Future Enhancements & Conclusion
+
+=== PAGE 14 ===

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>EV-Agent</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'primary': '#006a3b', 'inverse-on-surface': '#ecf0ff', 'inverse-surface': '#273143', 'error-container': '#ffdad6', 'on-secondary': '#ffffff', 'surface-container-low': '#f0f3ff', 'secondary': '#386380', 'surface-container-highest': '#d9e3fb', 'on-tertiary-fixed-variant': '#4918c8', 'primary-fixed-dim': '#64dd93', 'on-background': '#111c2d', 'tertiary-fixed': '#e6deff', 'on-error-container': '#93000a', 'secondary-container': '#b2dcfe', 'error': '#ba1a1a', 'surface': '#f9f9ff', 'primary-fixed': '#81faad', 'tertiary-container': '#7857f8', 'surface-dim': '#d0daf2', 'surface-container': '#e8eeff', 'primary-container': '#00864b', 'surface-container-high': '#dfe8ff', 'background': '#f9f9ff', 'outline': '#6d7a6f', 'on-secondary-fixed': '#001e2f', 'surface-tint': '#006d3c', 'secondary-fixed': '#c9e6ff', 'tertiary-fixed-dim': '#cabeff', 'surface-container-lowest': '#ffffff', 'on-tertiary-fixed': '#1c0062', 'on-tertiary': '#ffffff', 'on-tertiary-container': '#fffbff', 'on-primary-fixed-variant': '#00522c', 'secondary-fixed-dim': '#a1cced', 'on-primary-container': '#f6fff4', 'on-primary': '#ffffff', 'on-secondary-fixed-variant': '#1d4b67', 'on-secondary-container': '#37627f', 'on-primary-fixed': '#00210e', 'inverse-primary': '#64dd93', 'surface-bright': '#f9f9ff', 'on-error': '#ffffff', 'outline-variant': '#bdcabd', 'tertiary': '#5f3add', 'on-surface-variant': '#3e4a40', 'surface-variant': '#d9e3fb', 'on-surface': '#111c2d' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: { 'space-lg': '1.5rem', 'space-xs': '0.25rem', 'gutter': '1rem', 'margin': '1rem', 'space-xl': '2rem', 'space-md': '1rem', 'space-sm': '0.5rem' }, fontFamily: { 'headline-md': ['Inter'], 'label-sm': ['Inter'], 'body-sm': ['Inter'], 'headline-lg': ['Inter'], 'label-md': ['Inter'], 'metric-display-mobile': ['Inter'], 'headline-xl-mobile': ['Inter'], 'metric-display': ['Inter'], 'body-md': ['Inter'], 'label-lg': ['Inter'], 'headline-sm': ['Inter'], 'body-lg': ['Inter'], 'headline-lg-mobile': ['Inter'], 'headline-xl': ['Inter'] }, fontSize: { 'headline-md': ['20px', { lineHeight: '28px', letterSpacing: '-0.01em', fontWeight: '600' }], 'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.03em', fontWeight: '600' }], 'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.01em', fontWeight: '400' }], 'headline-lg': ['30px', { lineHeight: '38px', letterSpacing: '-0.015em', fontWeight: '600' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.01em', fontWeight: '500' }], 'metric-display-mobile': ['36px', { lineHeight: '42px', letterSpacing: '-0.025em', fontWeight: '700' }], 'headline-xl-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.015em', fontWeight: '700' }], 'metric-display': ['48px', { lineHeight: '52px', letterSpacing: '-0.03em', fontWeight: '700' }], 'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0em', fontWeight: '400' }], 'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.005em', fontWeight: '500' }], 'headline-sm': ['16px', { lineHeight: '24px', letterSpacing: '0em', fontWeight: '600' }], 'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0em', fontWeight: '400' }], 'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '-0.01em', fontWeight: '600' }], 'headline-xl': ['40px', { lineHeight: '48px', letterSpacing: '-0.02em', fontWeight: '700' }] } } } };</script><style>@layer base { html, body { width: 100vw; min-height: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] pt-safe"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors -ml-2" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="Brand logo. - Primary color: #16a05d - Font: inter - Mode: light - Roundness: rounded-md" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VMn25VcOJAt2yBLekUuLNfxZ42Wu4H60JS8lKtCd8eaoiRY_mM42j8skXS_ULAHnnSnGSHrmGu9iie7doBtKeVUq0aE2kcuLAWREXyqyUewqeoyY8QrVyqfHaY7-uumH0QN1kcWxFOMnjtL002E8kc8wbQiA6NMaOWUIy2YcacPxZBl2kZyk64kVFvJCYKuLp9fS7VMaSGRPAb1hSz3r6VwvidCLbQVqg0BVEQfW6oKXgwwbsJD_kMJ0E"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate ml-1">Slot Reservation Flow</h1></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="relative flex items-center justify-center"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] leading-none flex items-center justify-center font-bold pointer-events-none">3</span></div><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center rounded-full active:scale-95 transition-transform" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V0h3oBE6tEDeRGAqN3G73g6PnKyvcUeLuHZpgncCAC21lLuaLG1gWACvjupkcLDi-OIIin-NFbf4pqSpKDw8iixmpfuxZ3Z1bKMv2jRog2LFxlMhD7vtPdkdYRmygHmdw8fc6tzpPwxk2FlrmqII42UJBnhwugkRkFnuZ09aHwRSaDhsXxEHG29EoRXLQf9NQR5Lj7JtVJZXLeyLgpCcZOvxix8oWX2MXsVNIIqt_i_H5WhFjMCOS6poTc"/></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-32">
+<!-- Vehicle Context Header Sub-bar -->
+<div class="px-space-md pt-space-xs pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Vehicle Sync</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">electric_car</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Tata Nexon EV Max</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-1.5 py-0.5 rounded-full font-medium">40.5 kWh</span>
+</div>
+</div>
+<!-- Step 1: Progress Stepper Bar -->
+<div class="px-space-md py-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<div class="grid grid-cols-4 items-center relative">
+<!-- Connecting subtle track -->
+<div class="absolute left-[12%] right-[12%] top-3.5 h-0.5 bg-surface-container-highest -z-0">
+<div class="h-full bg-primary w-[66%] transition-all duration-300"></div>
+</div>
+<!-- Node 1: Station -->
+<div class="flex flex-col items-center text-center z-10">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-[15px] shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-medium mt-1 truncate max-w-full">Station</span>
+</div>
+<!-- Node 2: Bay -->
+<div class="flex flex-col items-center text-center z-10">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-[15px] shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-medium mt-1 truncate max-w-full">Bay #02</span>
+</div>
+<!-- Node 3: Slot (Active) -->
+<div class="flex flex-col items-center text-center z-10">
+<div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center text-[14px] shadow-md font-semibold ring-4 ring-tertiary-container/30 animate-pulse">
+            3
+          </div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold mt-1 truncate max-w-full">Time Slot</span>
+</div>
+<!-- Node 4: Confirm -->
+<div class="flex flex-col items-center text-center z-10 opacity-60">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center text-[13px] font-medium">
+            4
+          </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 truncate max-w-full">Confirm</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Booking Details Container -->
+<div class="px-space-md pt-space-md flex flex-col gap-space-md">
+<!-- Station Summary Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Fast Corridor Hub</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Chennai EV Hub - Guindy</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">SIDCO Industrial Estate, Guindy, Chennai</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">ev_station</span>
+</div>
+</div>
+<!-- Real-time Route & Battery Telemetry Pill -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between gap-2 mt-1">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Est. Arrival</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">11:22 AM <span class="font-normal text-on-surface-variant">(8m drive)</span></span>
+</div>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]">battery_3_bar</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Arrival SoC</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">16% <span class="text-primary font-bold">(38 km)</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Selected Bay & Hardware Configuration Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">electrical_services</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-1.5 py-0.5 rounded font-bold">BAY #02</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CCS2 DC Gun</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">60 kW Superfast</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">₹18.00/kWh • <span class="text-primary font-medium">3 Bays Free</span></div>
+</div>
+</div>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md active:bg-surface-container-high transition-colors" type="button">
+        Change
+      </button>
+</div>
+<!-- Agentic Slot Selector Engine Module -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Date Segment Bar -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex gap-2">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm font-semibold flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">today</span>
+            Today, 26 Oct
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+            Tomorrow, 27 Oct
+          </button>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">IST (hh:mm a)</span>
+</div>
+<!-- Agentic AI Optimizer Highlight Banner -->
+<div class="p-space-sm rounded-lg bg-tertiary-fixed/30 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed font-bold tracking-wide">AI OPTIMAL RECOMMENDATION</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Suggested slot: <strong class="text-on-surface font-semibold">11:30 AM</strong> matches your 8-min transit time + 4-min staging buffer to prevent battery cool-down.
+          </p>
+</div>
+</div>
+<!-- Guaranteed Bay Lock Announcement -->
+<div class="flex items-center gap-2 px-space-xs text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Guaranteed bay lock holds for 15 minutes past start time.</span>
+</div>
+<!-- Interactive Slot Pills Grid -->
+<div class="flex flex-col gap-2.5" id="slot-container">
+<!-- Slot 1 -->
+<button class="slot-pill w-full flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface transition-all active:scale-[0.99]" onclick="selectSlot(this, '11:15 AM')" type="button">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">schedule</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface">11:15 AM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Arrives in 1 min after transit</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">Available</span>
+<div class="radio-indicator w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="dot w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+</div>
+</button>
+<!-- Slot 2: Selected by default (AI Match) -->
+<button class="slot-pill selected-slot w-full flex items-center justify-between p-space-sm rounded-xl bg-surface-container-lowest text-on-surface transition-all shadow-md active:scale-[0.99] relative" onclick="selectSlot(this, '11:30 AM')" style="box-shadow: 0 0 0 2px #5f3add;" type="button">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-tertiary text-on-tertiary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="flex flex-col text-left">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">11:30 AM</span>
+<span class="bg-tertiary text-on-tertiary font-label-sm text-[10px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">auto_awesome</span> AI Pick
+                </span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Recommended: Perfect arrival timing</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="radio-indicator w-5 h-5 rounded-full bg-tertiary flex items-center justify-center shadow-sm">
+<span class="dot w-2 h-2 rounded-full bg-on-tertiary"></span>
+</div>
+</div>
+</button>
+<!-- Slot 3 -->
+<button class="slot-pill w-full flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface transition-all active:scale-[0.99]" onclick="selectSlot(this, '11:45 AM')" type="button">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">schedule</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface">11:45 AM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Low bay queue likelihood</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">Available</span>
+<div class="radio-indicator w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="dot w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+</div>
+</button>
+<!-- Slot 4: Occupied -->
+<div class="w-full flex items-center justify-between p-space-sm rounded-xl bg-surface-container-highest/40 text-on-surface-variant opacity-75 cursor-not-allowed">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant/70">block</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant line-through">12:00 PM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/80">Fleet session booked</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-error font-medium bg-error-container/40 px-2 py-0.5 rounded-full">Occupied</span>
+</div>
+<!-- Slot 5 -->
+<button class="slot-pill w-full flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface transition-all active:scale-[0.99]" onclick="selectSlot(this, '12:15 PM')" type="button">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">schedule</span>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface">12:15 PM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Available later window</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">Available</span>
+<div class="radio-indicator w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="dot w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+</div>
+</button>
+</div>
+</div>
+<!-- Pre-Booking Verification Trust Signal -->
+<div class="p-space-sm rounded-xl bg-surface-container-high/60 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0">cable</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+        We will re-check real-time hardware handshake and bay availability before finalizing reservation.
+      </p>
+</div>
+</div>
+<!-- Persistent Sticky Bottom Booking & Cost Action Bar -->
+<div class="fixed bottom-0 inset-x-0 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.06)] p-space-md pb-safe flex flex-col gap-2.5 z-40">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Estimated Session Cost</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">₹220 - ₹270</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">est.</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Target Energy</span>
+<span class="font-label-md text-label-md text-primary font-semibold">~15.2 kWh (to 80%)</span>
+</div>
+</div>
+<!-- Booking Trigger Button -->
+<button class="w-full h-12 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all" id="confirm-btn" onclick="executeReservation()" type="button">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+<span>Confirm &amp; Lock Slot (₹250 est.)</span>
+</button>
+</div>
+</div>
+<script>
+  function selectSlot(buttonElement, timeString) {
+    const allPills = document.querySelectorAll('.slot-pill');
+    allPills.forEach(pill => {
+      pill.classList.remove('selected-slot', 'shadow-md');
+      pill.style.boxShadow = 'none';
+      pill.classList.add('bg-surface-container-low');
+      const indicator = pill.querySelector('.radio-indicator');
+      if (indicator) {
+        indicator.classList.remove('bg-tertiary', 'bg-primary');
+        indicator.classList.add('bg-surface-container-highest');
+        const dot = indicator.querySelector('.dot');
+        if (dot) dot.classList.replace('bg-on-tertiary', 'bg-transparent');
+      }
+    });
+
+    buttonElement.classList.remove('bg-surface-container-low');
+    buttonElement.classList.add('selected-slot', 'bg-surface-container-lowest', 'shadow-md');
+    buttonElement.style.boxShadow = '0 0 0 2px #5f3add';
+
+    const currentIndicator = buttonElement.querySelector('.radio-indicator');
+    if (currentIndicator) {
+      currentIndicator.classList.remove('bg-surface-container-highest');
+      currentIndicator.classList.add('bg-tertiary');
+      const currentDot = currentIndicator.querySelector('.dot');
+      if (currentDot) {
+        currentDot.classList.remove('bg-transparent');
+        currentDot.classList.add('bg-on-tertiary');
+      }
+    }
+
+    const ctaBtn = document.getElementById('confirm-btn');
+    if (ctaBtn) {
+      ctaBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px]">lock_clock</span>
+        <span>Confirm & Lock ${timeString} (₹250 est.)</span>
+      `;
+    }
+  }
+
+  function executeReservation() {
+    const ctaBtn = document.getElementById('confirm-btn');
+    if (ctaBtn) {
+      ctaBtn.disabled = true;
+      ctaBtn.classList.add('opacity-80');
+      ctaBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span>
+        <span>Handshaking Bay #02...</span>
+      `;
+
+      setTimeout(() => {
+        ctaBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[20px]">check_circle</span>
+          <span>Bay #02 Locked! Navigating...</span>
+        `;
+        ctaBtn.classList.remove('bg-primary');
+        ctaBtn.classList.add('bg-tertiary');
+      }, 1400);
+    }
+  }
+</script></main></body></html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>EV-Agent</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'primary': '#006a3b', 'inverse-on-surface': '#ecf0ff', 'inverse-surface': '#273143', 'error-container': '#ffdad6', 'on-secondary': '#ffffff', 'surface-container-low': '#f0f3ff', 'secondary': '#386380', 'surface-container-highest': '#d9e3fb', 'on-tertiary-fixed-variant': '#4918c8', 'primary-fixed-dim': '#64dd93', 'on-background': '#111c2d', 'tertiary-fixed': '#e6deff', 'on-error-container': '#93000a', 'secondary-container': '#b2dcfe', 'error': '#ba1a1a', 'surface': '#f9f9ff', 'primary-fixed': '#81faad', 'tertiary-container': '#7857f8', 'surface-dim': '#d0daf2', 'surface-container': '#e8eeff', 'primary-container': '#00864b', 'surface-container-high': '#dfe8ff', 'background': '#f9f9ff', 'outline': '#6d7a6f', 'on-secondary-fixed': '#001e2f', 'surface-tint': '#006d3c', 'secondary-fixed': '#c9e6ff', 'tertiary-fixed-dim': '#cabeff', 'surface-container-lowest': '#ffffff', 'on-tertiary-fixed': '#1c0062', 'on-tertiary': '#ffffff', 'on-tertiary-container': '#fffbff', 'on-primary-fixed-variant': '#00522c', 'secondary-fixed-dim': '#a1cced', 'on-primary-container': '#f6fff4', 'on-primary': '#ffffff', 'on-secondary-fixed-variant': '#1d4b67', 'on-secondary-container': '#37627f', 'on-primary-fixed': '#00210e', 'inverse-primary': '#64dd93', 'surface-bright': '#f9f9ff', 'on-error': '#ffffff', 'outline-variant': '#bdcabd', 'tertiary': '#5f3add', 'on-surface-variant': '#3e4a40', 'surface-variant': '#d9e3fb', 'on-surface': '#111c2d' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: { 'space-lg': '1.5rem', 'space-xs': '0.25rem', 'gutter': '1rem', 'margin': '1rem', 'space-xl': '2rem', 'space-md': '1rem', 'space-sm': '0.5rem' }, fontFamily: { 'headline-md': ['Inter'], 'label-sm': ['Inter'], 'body-sm': ['Inter'], 'headline-lg': ['Inter'], 'label-md': ['Inter'], 'metric-display-mobile': ['Inter'], 'headline-xl-mobile': ['Inter'], 'metric-display': ['Inter'], 'body-md': ['Inter'], 'label-lg': ['Inter'], 'headline-sm': ['Inter'], 'body-lg': ['Inter'], 'headline-lg-mobile': ['Inter'], 'headline-xl': ['Inter'] }, fontSize: { 'headline-md': ['20px', { lineHeight: '28px', letterSpacing: '-0.01em', fontWeight: '600' }], 'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.03em', fontWeight: '600' }], 'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.01em', fontWeight: '400' }], 'headline-lg': ['30px', { lineHeight: '38px', letterSpacing: '-0.015em', fontWeight: '600' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.01em', fontWeight: '500' }], 'metric-display-mobile': ['36px', { lineHeight: '42px', letterSpacing: '-0.025em', fontWeight: '700' }], 'headline-xl-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.015em', fontWeight: '700' }], 'metric-display': ['48px', { lineHeight: '52px', letterSpacing: '-0.03em', fontWeight: '700' }], 'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0em', fontWeight: '400' }], 'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.005em', fontWeight: '500' }], 'headline-sm': ['16px', { lineHeight: '24px', letterSpacing: '0em', fontWeight: '600' }], 'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0em', fontWeight: '400' }], 'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '-0.01em', fontWeight: '600' }], 'headline-xl': ['40px', { lineHeight: '48px', letterSpacing: '-0.02em', fontWeight: '700' }] } } } };</script><style>@layer base { html, body { width: 100vw; min-height: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-primary selection:text-on-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] pt-safe"><div class="h-20 px-space-md flex flex-col justify-center gap-space-xs"><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Brand logo. - Primary color: #16a05d - Font: inter - Mode: light - Roundness: rounded-md" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VMn25VcOJAt2yBLekUuLNfxZ42Wu4H60JS8lKtCd8eaoiRY_mM42j8skXS_ULAHnnSnGSHrmGu9iie7doBtKeVUq0aE2kcuLAWREXyqyUewqeoyY8QrVyqfHaY7-uumH0QN1kcWxFOMnjtL002E8kc8wbQiA6NMaOWUIy2YcacPxZBl2kZyk64kVFvJCYKuLp9fS7VMaSGRPAb1hSz3r6VwvidCLbQVqg0BVEQfW6oKXgwwbsJD_kMJ0E"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface truncate">EV-Agent</span><span class="px-space-xs py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold tracking-wide uppercase">Live</span></div><div class="flex items-center gap-space-xs"><span class="font-body-sm text-body-sm text-on-surface-variant truncate">Tata Nexon EV Max • 62% SoC</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="relative flex items-center justify-center"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface active:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] leading-none flex items-center justify-center font-bold pointer-events-none">3</span></div><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center rounded-full active:scale-95 transition-transform" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V0h3oBE6tEDeRGAqN3G73g6PnKyvcUeLuHZpgncCAC21lLuaLG1gWACvjupkcLDi-OIIin-NFbf4pqSpKDw8iixmpfuxZ3Z1bKMv2jRog2LFxlMhD7vtPdkdYRmygHmdw8fc6tzpPwxk2FlrmqII42UJBnhwugkRkFnuZ09aHwRSaDhsXxEHG29EoRXLQf9NQR5Lj7JtVJZXLeyLgpCcZOvxix8oWX2MXsVNIIqt_i_H5WhFjMCOS6poTc"/></button></div></div><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-primary text-[15px]">location_on</span><span class="font-label-sm text-label-sm text-on-surface truncate">Anna Nagar, Chennai</span></div><span class="font-label-sm text-label-sm text-on-surface-variant tracking-tight">Home</span></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full space-y-space-md px-margin pb-space-lg">
+<!-- 1. Top Simulation Banner -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-sm shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[14px] text-amber-600">science</span>
+<span class="font-label-sm text-label-sm tracking-wide font-semibold truncate">DEMO / SIMULATED VEHICLE</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Chennai Zone 1</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface text-secondary hover:bg-surface-container transition-all active:scale-95 shadow-sm flex-shrink-0" id="sim-toggle-btn" type="button">
+<span class="material-symbols-outlined text-[15px]">sync_alt</span>
+<span class="font-label-sm text-label-sm font-semibold">Live Mode</span>
+</button>
+</div>
+<!-- 2. User Greeting & Autonomous Pill -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-baseline gap-1.5">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Vanakkam, Karthik</h1>
+<span class="text-xl select-none">⚡</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+        Synced
+      </span>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[13px] text-tertiary">smart_toy</span>
+<span class="font-label-sm text-label-sm font-medium">Autonomous Engine v2.4 Active</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">• Optimal routes predicted</span>
+</div>
+</div>
+<!-- 3. Vehicle & Battery Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<!-- Ambient aura accent -->
+<div class="absolute -top-16 -right-16 w-36 h-36 bg-primary-fixed/20 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Vehicle Details Row -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tata Nexon EV Max</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider font-semibold">Long Range</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">TN 09 BK 4521 • Glacier White</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[16px]">power_off</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unplugged</span>
+</div>
+</div>
+<!-- Battery Level & Main Metrics Visual -->
+<div class="flex items-center justify-between gap-space-md pt-1">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-display-mobile text-metric-display-mobile text-on-surface">62</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">%</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-body-sm text-body-sm">0.3 kW Idle Draw</span>
+</div>
+</div>
+<!-- Linear Gauge Progress Meter -->
+<div class="flex-1 flex flex-col gap-1.5 pl-space-sm">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Battery Reserve</span>
+<span class="font-semibold text-on-surface">25.1 / 40.5 kWh</span>
+</div>
+<div class="w-full h-3.5 bg-surface-container rounded-full overflow-hidden p-0.5">
+<div class="h-full bg-gradient-to-r from-primary-fixed-dim to-primary rounded-full transition-all duration-1000 shadow-sm" style="width: 62%;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-[10px] text-on-surface-variant">
+<span>0%</span>
+<span class="text-primary font-medium">Eco Safe Zone</span>
+<span>100%</span>
+</div>
+</div>
+</div>
+<!-- Distinct Dual Range Display -->
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<!-- Standard Range -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">speed</span>
+          Standard MIDC
+        </span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface">148</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">km</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-0.5">Ideal steady state</span>
+</div>
+<!-- Real-World Chennai Range -->
+<div class="bg-surface-container-high rounded-lg p-space-sm flex flex-col relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">tune</span>
+            Practical Range
+          </span>
+<span class="material-symbols-outlined text-primary text-[14px]">bolt</span>
+</div>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md text-primary font-bold">125</span>
+<span class="font-body-sm text-body-sm text-primary font-semibold">km</span>
+</div>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-0.5 truncate">Chennai traffic + AC (24°C)</span>
+</div>
+</div>
+<!-- Pack Diagnostics & Health Metrics -->
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">SOH Health</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">98%</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Tyre Pressure</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">34.2 <span class="text-[10px] font-normal">PSI</span></span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-lg bg-surface-container">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Pack Temp</span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">31.4<span class="text-[10px] font-normal">°C</span></span>
+</div>
+</div>
+</div>
+<!-- 4. Quick Action Horizontal Scroll Pills -->
+<div class="flex items-center gap-space-sm overflow-x-auto py-1 -mx-margin px-margin no-scrollbar">
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">ev_station</span>
+<span>Find Charger</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">explore</span>
+<span>View Map</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">calendar_add_on</span>
+<span>Book Slot</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full bg-tertiary text-on-tertiary font-label-lg text-label-lg shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>Ask AI</span>
+</button>
+</div>
+<!-- 5. Agentic AI Recommendation Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden">
+<!-- Subtle Agentic Purple Glow -->
+<div class="absolute -top-10 -right-10 w-28 h-28 bg-tertiary-fixed/40 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-tertiary uppercase tracking-wider">Agentic Recommendation</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">94% Confidence</span>
+</div>
+<!-- Station Info Header -->
+<div class="flex flex-col gap-0.5 mt-1">
+<div class="flex items-start justify-between gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Chennai EV Hub - Guindy</h2>
+<span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded font-semibold whitespace-nowrap">Fast DC</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px] text-primary">near_me</span> 3.2 km</span>
+<span>•</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">schedule</span> 8 min travel</span>
+<span>•</span>
+<span class="text-on-surface font-medium">₹18/kWh</span>
+</div>
+</div>
+<!-- Telemetry Hardware Specs & Range Reserve Tag -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">electric_bolt</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">60 kW CCS2 Dual Gun</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Gun #02 Free • Dynamic Tariff Active</span>
+</div>
+</div>
+<div class="text-right flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-primary">Reachable</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">121.8 km reserve left</span>
+</div>
+</div>
+<!-- Expandable "Why this station?" explanation -->
+<div class="flex flex-col">
+<button class="flex items-center justify-between py-1 text-on-surface-variant hover:text-tertiary transition-colors" id="why-toggle-btn" type="button">
+<span class="font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">info</span>
+          Why this station?
+        </span>
+<span class="material-symbols-outlined text-[16px] transition-transform" id="why-icon">expand_more</span>
+</button>
+<div class="hidden text-on-surface-variant bg-surface-container-high rounded-lg p-2.5 text-body-sm font-body-sm mt-1" id="why-explanation">
+        AI evaluated Anna Salai peak bottleneck (+14 mins). Guindy Hub has lower queue probability, peak solar tariff window open until 12:00 PM, and 4 free fast bays.
+      </div>
+</div>
+<!-- Main Agentic CTA Button -->
+<button class="w-full py-3 px-4 rounded-xl bg-tertiary text-on-tertiary font-label-lg text-label-lg font-medium flex items-center justify-center gap-2 shadow-md active:scale-[0.99] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">touch_app</span>
+<span>1-Tap Reserve for 11:30 AM</span>
+</button>
+</div>
+<!-- 6. Confirmed Booking Pass Card -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<!-- Top Notch Details -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold text-primary uppercase tracking-wider">Confirmed Booking Pass</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">EV-2026-000123</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm pt-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Guindy Bay #03</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Today • 2:00 PM - 2:45 PM (Slot Locked)</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[24px]">qr_code_2</span>
+</div>
+</div>
+<!-- Booking Pass Buttons -->
+<div class="grid grid-cols-2 gap-space-sm pt-2">
+<button class="py-2.5 px-3 rounded-lg bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+<span>View QR Pass</span>
+</button>
+<button class="py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">directions</span>
+<span>Directions</span>
+</button>
+</div>
+</div>
+<!-- 7. Nearby Live Stations Quick List -->
+<div class="flex flex-col gap-space-sm pt-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Nearby Live Stations</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(Chennai Metro)</span>
+</div>
+<button class="font-label-md text-label-md text-primary font-semibold flex items-center" type="button">
+        See All (18)
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- Station List Cards -->
+<div class="flex flex-col gap-space-sm">
+<!-- Station 1 -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/40 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Chennai EV Hub</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold">Fast</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant truncate">
+<span>Guindy • 3.2 km</span>
+<span>•</span>
+<span class="text-primary font-medium">4/8 free</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface">₹18<span class="font-body-sm text-body-sm text-on-surface-variant">/kWh</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CCS2 60kW</span>
+</div>
+</div>
+<!-- Station 2 -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">ev_station</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">T Nagar Express</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant truncate">
+<span>Pondy Bazaar • 5.1 km</span>
+<span>•</span>
+<span class="text-amber-700 font-medium">2/4 free</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface">₹19<span class="font-body-sm text-body-sm text-on-surface-variant">/kWh</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CCS2 50kW</span>
+</div>
+</div>
+<!-- Station 3 -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">offline_bolt</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">OMR Tech Supercharger</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-[10px] font-bold">120kW</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant truncate">
+<span>Thoraipakkam • 8.4 km</span>
+<span>•</span>
+<span class="text-primary font-medium">6/12 free</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-headline-sm text-headline-sm text-on-surface">₹21<span class="font-body-sm text-body-sm text-on-surface-variant">/kWh</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CCS2 Ultra</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Ambient Micro-Interaction Handler -->
+<script>
+    (function() {
+      // Toggle for AI explanation drawer
+      var whyBtn = document.getElementById('why-toggle-btn');
+      var whyExp = document.getElementById('why-explanation');
+      var whyIcon = document.getElementById('why-icon');
+      if (whyBtn && whyExp && whyIcon) {
+        whyBtn.addEventListener('click', function() {
+          var isHidden = whyExp.classList.contains('hidden');
+          if (isHidden) {
+            whyExp.classList.remove('hidden');
+            whyIcon.classList.add('rotate-180');
+          } else {
+            whyExp.classList.add('hidden');
+            whyIcon.classList.remove('rotate-180');
+          }
+        });
+      }
+
+      // Simulation mode toggle feedback
+      var simToggle = document.getElementById('sim-toggle-btn');
+      if (simToggle) {
+        simToggle.addEventListener('click', function() {
+          var label = simToggle.querySelector('span:last-child');
+          if (label) {
+            if (label.innerText === 'Live Mode') {
+              label.innerText = 'Sim Mode';
+              simToggle.classList.add('bg-secondary-container', 'text-on-secondary-container');
+            } else {
+              label.innerText = 'Live Mode';
+              simToggle.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+            }
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 active:scale-95 transition-all text-primary font-semibold" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm">Home</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="map" href="#"><span class="material-symbols-outlined text-[22px]">location_on</span><span class="font-label-sm text-label-sm">Map</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="bookings" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-sm text-label-sm">Bookings</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 text-on-surface-variant hover:text-on-surface active:scale-95 transition-all relative" data-path="ai-agent" href="#"><span class="material-symbols-outlined text-[22px] text-tertiary">auto_awesome</span><span class="font-label-sm text-label-sm text-tertiary font-semibold">AI Agent</span><span class="absolute -top-1 right-2 w-2 h-2 rounded-full bg-tertiary animate-pulse"></span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] min-h-[44px] h-12 text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-sm text-label-sm">Profile</span></a></div></nav></body></html>

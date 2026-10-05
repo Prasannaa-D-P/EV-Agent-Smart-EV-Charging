@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-error": "#ffffff",
+          "on-primary-container": "#f6fff4",
+          "primary": "#006a3b",
+          "on-primary-fixed-variant": "#00522c",
+          "surface-dim": "#d0daf2",
+          "on-secondary-fixed": "#001e2f",
+          "on-surface-variant": "#3e4a40",
+          "on-tertiary": "#ffffff",
+          "error-container": "#ffdad6",
+          "tertiary-fixed-dim": "#cabeff",
+          "secondary": "#386380",
+          "on-background": "#111c2d",
+          "on-tertiary-container": "#fffbff",
+          "surface-container-highest": "#d9e3fb",
+          "on-primary": "#ffffff",
+          "outline": "#6d7a6f",
+          "tertiary-container": "#7857f8",
+          "error": "#ba1a1a",
+          "tertiary-fixed": "#e6deff",
+          "surface": "#f9f9ff",
+          "inverse-surface": "#273143",
+          "surface-container-lowest": "#ffffff",
+          "secondary-fixed": "#c9e6ff",
+          "on-primary-fixed": "#00210e",
+          "inverse-on-surface": "#ecf0ff",
+          "secondary-fixed-dim": "#a1cced",
+          "surface-container": "#e8eeff",
+          "surface-container-low": "#f0f3ff",
+          "primary-fixed": "#81faad",
+          "surface-variant": "#d9e3fb",
+          "surface-container-high": "#dfe8ff",
+          "surface-bright": "#f9f9ff",
+          "on-tertiary-fixed-variant": "#4918c8",
+          "on-secondary-fixed-variant": "#1d4b67",
+          "on-tertiary-fixed": "#1c0062",
+          "outline-variant": "#bdcabd",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#37627f",
+          "secondary-container": "#b2dcfe",
+          "on-surface": "#111c2d",
+          "background": "#f9f9ff",
+          "primary-container": "#00864b",
+          "primary-fixed-dim": "#64dd93",
+          "on-error-container": "#93000a",
+          "inverse-primary": "#64dd93",
+          "surface-tint": "#006d3c",
+          "tertiary": "#5f3add"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "margin": "1rem",
+          "space-xl": "2rem",
+          "gutter": "1rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-xl": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Inter"
+          ],
+          "headline-xl-mobile": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "metric-display-mobile": [
+            "Inter"
+          ],
+          "metric-display": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-sm": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.005em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.03em",
+              "fontWeight": "600"
+            }
+          ],
+          "metric-display-mobile": [
+            "36px",
+            {
+              "lineHeight": "42px",
+              "letterSpacing": "-0.025em",
+              "fontWeight": "700"
+            }
+          ],
+          "metric-display": [
+            "48px",
+            {
+              "lineHeight": "52px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      }
+    }
+  };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="EV-Agent Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VMn25VcOJAt2yBLekUuLNfxZ42Wu4H60JS8lKtCd8eaoiRY_mM42j8skXS_ULAHnnSnGSHrmGu9iie7doBtKeVUq0aE2kcuLAWREXyqyUewqeoyY8QrVyqfHaY7-uumH0QN1kcWxFOMnjtL002E8kc8wbQiA6NMaOWUIy2YcacPxZBl2kZyk64kVFvJCYKuLp9fS7VMaSGRPAb1hSz3r6VwvidCLbQVqg0BVEQfW6oKXgwwbsJD_kMJ0E"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">EV-Agent</span><span class="font-label-sm text-label-sm text-tertiary flex items-center gap-space-xs font-semibold">Autonomous Core</span></div></div><button class="p-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">dock_to_left</span></button></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-xl p-space-sm flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">electric_car</span></div><div class="flex-1 min-w-0"><p class="font-label-md text-label-md text-on-surface font-semibold truncate">Tata Nexon EV Max</p><p class="font-body-sm text-body-sm text-on-surface-variant truncate">TN 09 BK 4521</p></div><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div></div></div><nav class="px-space-sm py-space-xs space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-[0_1px_3px_rgba(0,106,59,0.2)]"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group font-label-lg text-label-lg" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group font-label-lg text-label-lg" data-path="vehicle-telemetry" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">speed</span><span>My EV &amp; Telemetry</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg transition-all group bg-primary-container text-on-primary-container font-semibold shadow-[0_1px_3px_rgba(0,106,59,0.2)]" data-path="find-chargers" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">ev_charger</span><span>Find Chargers &amp; Map</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group font-label-lg text-label-lg" data-path="booking-slots" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">calendar_month</span><span>Booking &amp; Slots</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group font-label-lg text-label-lg" data-path="ai-assistant" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px] text-tertiary-container group-hover:text-tertiary">auto_awesome</span><span>AI Assistant</span></div><span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded-full font-semibold">Copilot</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group font-label-lg text-label-lg" data-path="notifications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">notifications</span><span>Notifications</span></div><span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-1.5 py-0.5 rounded-full font-bold">3</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all group font-label-lg text-label-lg" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">settings</span><span>Settings</span></a></nav></div><div class="p-space-md bg-surface-container-lowest"><div class="bg-surface-container-low rounded-xl p-space-sm mb-space-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">battery_charging_80</span><span class="font-label-md text-label-md text-on-surface font-semibold">SoC: 78%</span></div><span class="font-label-sm text-label-sm text-secondary font-medium">312 km Range</span></div><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm px-1"><span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Connected</span><span>v2.4.1</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-10 pr-4 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search charging stations, connectors (CCS2, Type 2), or areas..." type="text"/></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap"><span class="material-symbols-outlined text-primary text-[16px]">location_on</span><span class="text-on-surface font-medium">Anna Nagar, Chennai</span><span class="text-outline-variant">•</span><span class="text-primary font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>GPS Active</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-secondary text-[16px]">science</span><span class="font-medium text-on-surface">DEMO / SIMULATED VEHICLE DATA</span><button class="ml-1 font-label-sm text-label-sm bg-surface-container-lowest hover:bg-surface-container-highest px-2 py-0.5 rounded text-on-surface font-semibold shadow-xs transition-colors">Switch</button></div><button class="flex items-center gap-space-xs px-space-md h-10 rounded-xl bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-all font-label-md text-label-md font-semibold shadow-xs"><span class="material-symbols-outlined text-[18px]">bolt</span><span>Nearest Fast Charger</span></button><button class="relative p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-9 h-9 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq9sZCVJzMt-N2UMunHq_x5At1vblww0aIOGMLCUz2PHqnZmdfW3NIXncWbP3fqOW0t9zdrC0M_C-FKo2msrBo_mzo-UBio3N83eJiH5Q232jtWKHXyA9UqUYg_6YyQIa9zWY5iQnq0An5K_V3oY5Zc6OhOSsu4fKmnVh40TZivzppTCUv4Ck0jdQP3GWLGt33hn-duFytXimUTeGrKroUh8cRcYjSmYsXQF3pJZrZbYzCAekmq5A3uQ"/><div class="hidden 2xl:flex flex-col"><span class="font-label-lg text-label-lg font-semibold text-on-surface leading-tight">Karthik S.</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Chennai Corridor</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Horizontal Filter & Controls Bar -->
+<div class="w-full bg-surface-container-lowest px-space-lg py-space-sm shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm flex-1 min-w-[320px] max-w-2xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">travel_explore</span>
+<input class="w-full h-11 pl-11 pr-10 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-xs transition-all" id="station-search" placeholder="Search Chennai stations (e.g. Guindy, OMR, Anna Nagar, Marina)..." type="text" value="Guindy Industrial Estate, Chennai"/>
+<button class="absolute right-2.5 top-1/2 -translate-y-1/2 p-1 text-on-surface-variant hover:text-on-surface rounded-lg">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+<button class="h-11 px-space-md bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-xl flex items-center gap-1.5 font-label-md text-label-md shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>More Filters</span>
+<span class="w-4 h-4 rounded-full bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center ml-0.5">3</span>
+</button>
+</div>
+<!-- Telemetry Sync & Quick Metrics Pill -->
+<div class="flex items-center gap-space-sm">
+<div class="hidden lg:flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">LIVE TELEMETRY</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Grid Frequency 49.98 Hz</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">TANGEDCO Peak Off-Time</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-high p-1 rounded-xl">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm font-semibold text-on-surface shadow-xs">Split View</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">Map Only</button>
+</div>
+</div>
+</div>
+<!-- Active Filter Chips Carousel -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 text-nowrap scrollbar-none">
+<button class="px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center gap-1.5 shadow-xs shrink-0">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Available Now (Toggle On)</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-[15px]">electric_car</span>
+<span>Compatible: CCS2 &amp; Type 2</span>
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 shrink-0 transition-colors">
+<span class="material-symbols-outlined text-primary text-[15px]">bolt</span>
+<span>DC Fast (&gt;50 kW)</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 shrink-0 transition-colors">
+<span class="material-symbols-outlined text-secondary text-[15px]">power</span>
+<span>AC Charging</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 shrink-0">
+<span class="material-symbols-outlined text-primary text-[15px]">radar</span>
+<span>Within Practical Range (125 km)</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[15px]">payments</span>
+<span>Price &lt; ₹20/kWh</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>Open 24/7</span>
+</button>
+</div>
+</div>
+<!-- Main View Split Workspace -->
+<div class="flex flex-col lg:flex-row w-full h-[calc(100vh-8.5rem)] overflow-hidden">
+<!-- LEFT PANEL: 35% Width Station Feed & Vehicle Context -->
+<div class="w-full lg:w-[38%] xl:w-[35%] h-full flex flex-col bg-surface-container-lowest shadow-sm z-10">
+<!-- Vehicle Status Pill Banner -->
+<div class="px-space-md py-space-sm bg-surface-container-low">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[22px]">ev_station</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<p class="font-label-lg text-label-lg font-bold text-on-surface truncate">Tata Nexon EV Max</p>
+<span class="px-1.5 py-0.2 bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant rounded">TN 09</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 truncate">
+<span>CCS2 &amp; Type 2</span>
+<span>•</span>
+<span class="font-semibold text-primary">62% SoC (125 km)</span>
+</p>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Auto-Plan
+            </span>
+</div>
+</div>
+</div>
+<!-- Station List Header -->
+<div class="px-space-md py-2.5 flex items-center justify-between bg-surface-container-lowest">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Nearby Stations</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-semibold">18 Found</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span>Sort:</span>
+<button class="font-semibold text-on-surface flex items-center gap-0.5">
+<span>Fastest Reach</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Station Card Feed -->
+<div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-sm">
+<!-- CARD 1: Selected Station -->
+<div class="p-space-md rounded-2xl bg-surface-container-low shadow-md relative overflow-hidden cursor-pointer transition-all hover:translate-y-[-1px]">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-start justify-between gap-space-sm mb-2">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Chennai EV Hub - Guindy</h2>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-bold">Closest</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">near_me</span>
+<span class="font-semibold text-on-surface">3.2 km</span>
+<span class="text-outline-variant">•</span>
+<span>8 min travel via Guindy Flyover</span>
+</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              4 / 8 Free
+            </span>
+</div>
+<!-- Connector Specs -->
+<div class="grid grid-cols-2 gap-2 my-space-sm">
+<div class="p-2 rounded-xl bg-surface-container-lowest flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm font-bold text-primary block">CCS2 DC FAST</span>
+<span class="font-body-sm text-body-sm text-on-surface">60 kW (3 Available)</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-lowest flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm font-bold text-secondary block">TYPE 2 AC</span>
+<span class="font-body-sm text-body-sm text-on-surface">22 kW (1 Available)</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">ev_charger</span>
+</div>
+</div>
+<!-- Price & Reachability Analysis -->
+<div class="flex items-center justify-between py-1 font-body-sm text-body-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹18.00</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">/ kWh</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Safe Reachable (Est. 2.1 kWh)
+            </span>
+</div>
+<!-- Quick Action Buttons -->
+<div class="grid grid-cols-3 gap-2 mt-3 pt-2">
+<button class="col-span-1.5 bg-primary hover:bg-primary-container text-on-primary py-2 px-3 rounded-xl font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+<span>Book Slot</span>
+</button>
+<button class="bg-surface-container-lowest hover:bg-surface-container-high text-on-surface py-2 px-3 rounded-xl font-label-md text-label-md font-medium flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-secondary">navigation</span>
+<span>Directions</span>
+</button>
+<button class="bg-surface-container-lowest hover:bg-surface-container-high text-on-surface py-2 px-3 rounded-xl font-label-md text-label-md font-medium flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span>Details</span>
+</button>
+</div>
+</div>
+<!-- CARD 2: T Nagar Express Point -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm cursor-pointer transition-all">
+<div class="flex items-start justify-between gap-space-sm mb-1.5">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">T Nagar Express Charging Point</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="font-semibold text-on-surface">5.1 km</span>
+<span class="text-outline-variant">•</span>
+<span>14 min via Anna Salai</span>
+</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              2 / 4 Free
+            </span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant my-2">
+<span>Connectors: CCS2 (50 kW Dual Gun)</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹19.00 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">/kWh</span></span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Reachable (SoC at Arrival: 58%)
+            </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold flex items-center gap-0.5">
+<span>View Bay &amp; Reserve</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 3: OMR Cyber Gateway Supercharger -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm cursor-pointer transition-all">
+<div class="flex items-start justify-between gap-space-sm mb-1.5">
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">OMR Cyber Gateway Supercharger</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.2 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Ultra Fast</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="font-semibold text-on-surface">8.4 km</span>
+<span class="text-outline-variant">•</span>
+<span>19 min via Rajiv Gandhi IT Expressway</span>
+</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              6 / 12 Free
+            </span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant my-2">
+<span>Connectors: CCS2 120 kW High-Speed + GB/T</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹21.00 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">/kWh</span></span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Reachable (Optimal for Highway Route)
+            </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold flex items-center gap-0.5">
+<span>View Bay &amp; Reserve</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 4: Velachery Phoenix EV Station (Occupied) -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm opacity-90 cursor-pointer transition-all">
+<div class="flex items-start justify-between gap-space-sm mb-1.5">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Velachery Phoenix EV Station</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="font-semibold text-on-surface">7.9 km</span>
+<span class="text-outline-variant">•</span>
+<span>22 min via Velachery Main Rd</span>
+</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+              0 / 4 Occupied
+            </span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant my-2">
+<span>Est. Queue Wait: ~18 mins</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹18.50 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">/kWh</span></span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+              High Congestion corridor
+            </span>
+<button class="font-label-sm text-label-sm text-secondary hover:underline font-semibold">Join Virtual Queue</button>
+</div>
+</div>
+<!-- CARD 5: Adyar Coastal Charging Hub -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest hover:bg-surface-container-low shadow-sm cursor-pointer transition-all">
+<div class="flex items-start justify-between gap-space-sm mb-1.5">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Adyar Coastal Charging Hub</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="font-semibold text-on-surface">6.7 km</span>
+<span class="text-outline-variant">•</span>
+<span>16 min via Sardar Patel Rd</span>
+</p>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px] text-secondary">hourglass_top</span>
+              1 / 4 Limited
+            </span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant my-2">
+<span>Connectors: Type 2 AC (22 kW) + CCS2 (30 kW)</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">₹16.00 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">/kWh</span></span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Safe Reachable
+            </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold flex items-center gap-0.5">
+<span>View Bay &amp; Reserve</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Agent Autonomous Quick Planner Drawer Bar -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between shadow-inner">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm font-bold text-on-surface">Agent Corridor Recommendation</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Reserve Guindy Hub Bay 2 before 11:30 AM to save 12%</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-tertiary text-on-tertiary font-label-sm text-label-sm font-semibold hover:opacity-90 transition-opacity">
+          Auto-Reserve
+        </button>
+</div>
+</div>
+<!-- RIGHT PANEL: 65% Width Interactive Map Canvas & Overlays -->
+<div class="w-full lg:w-[62%] xl:w-[65%] h-full relative bg-surface-container overflow-hidden select-none">
+<!-- Interactive SVG Vector Map Rendering for Chennai Corridor -->
+<svg class="w-full h-full object-cover" viewbox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialgradient cx="44%" cy="52%" id="reachabilityGradient" r="48%">
+<stop offset="0%" stop-color="#81faad" stop-opacity="0.14"></stop>
+<stop offset="70%" stop-color="#81faad" stop-opacity="0.06"></stop>
+<stop offset="100%" stop-color="#81faad" stop-opacity="0.0"></stop>
+</radialgradient>
+<filter height="130%" id="mapShadow" width="130%" x="-10%" y="-10%">
+<fedropshadow dx="0" dy="3" flood-opacity="0.15" stddeviation="4"></fedropshadow>
+</filter>
+</defs>
+<!-- Coastline & Bay of Bengal Water Canvas -->
+<rect fill="#f0f4fd" height="800" width="1000"></rect>
+<path d="M 780 0 Q 810 250 830 500 T 890 800 L 1000 800 L 1000 0 Z" fill="#d9e6fa"></path>
+<text fill="#718bb2" font-size="14" font-weight="600" letter-spacing="4" transform="rotate(80, 890, 380)" x="890" y="380">BAY OF BENGAL</text>
+<!-- Urban Landmass Blocks -->
+<path d="M 0 0 L 780 0 Q 810 250 830 500 T 890 800 L 0 800 Z" fill="#eaf0fc"></path>
+<!-- Green Spaces (Guindy National Park & Theosophical Society) -->
+<path d="M 380 470 C 400 450, 450 460, 470 490 C 480 520, 440 560, 400 550 C 370 540, 360 500, 380 470 Z" fill="#d5edd9"></path>
+<text fill="#4a7c59" font-size="11" font-weight="600" x="400" y="515">Guindy Nat. Park</text>
+<path d="M 680 530 C 710 520, 740 530, 750 560 C 750 580, 720 600, 690 590 C 670 570, 670 540, 680 530 Z" fill="#d5edd9"></path>
+<text fill="#4a7c59" font-size="10" font-weight="600" x="690" y="565">Adyar Estuary</text>
+<!-- Major Highway Network (Anna Salai, GST Road, OMR, Inner Ring Rd, Marina Beach Rd) -->
+<!-- Marina Kamarajar Salai -->
+<path d="M 770 140 Q 805 340 825 510" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="7"></path>
+<path d="M 770 140 Q 805 340 825 510" fill="none" stroke="#cad5ea" stroke-linecap="round" stroke-width="4"></path>
+<text fill="#6c7d98" font-size="10" font-weight="600" transform="rotate(78, 815, 270)" x="815" y="270">Marina Kamarajar Promenade</text>
+<!-- Anna Salai (Mount Road) -->
+<path d="M 620 120 L 440 370 L 370 510 L 260 670" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="9"></path>
+<path d="M 620 120 L 440 370 L 370 510 L 260 670" fill="none" stroke="#b2c6e6" stroke-linecap="round" stroke-width="5"></path>
+<text fill="#386380" font-size="12" font-weight="700" transform="rotate(-54, 485, 275)" x="485" y="275">ANNA SALAI (Mount Rd)</text>
+<!-- GST Road (Grand Southern Trunk) -->
+<path d="M 370 510 L 290 610 L 150 780" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="8"></path>
+<path d="M 370 510 L 290 610 L 150 780" fill="none" stroke="#b2c6e6" stroke-linecap="round" stroke-width="4"></path>
+<text fill="#386380" font-size="11" font-weight="700" transform="rotate(-50, 210, 700)" x="210" y="700">GST ROAD (NH 45)</text>
+<!-- Rajiv Gandhi IT Expressway (OMR) -->
+<path d="M 670 480 L 680 580 L 710 800" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="9"></path>
+<path d="M 670 480 L 680 580 L 710 800" fill="none" stroke="#9bb7df" stroke-linecap="round" stroke-width="5"></path>
+<text fill="#1b4b67" font-size="12" font-weight="700" transform="rotate(82, 690, 690)" x="690" y="690">OMR (IT CORRIDOR)</text>
+<!-- Inner Ring Road & Kathipara Junction Loop -->
+<path d="M 220 320 C 320 370, 390 440, 370 510 C 350 560, 480 640, 580 630" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="7"></path>
+<path d="M 220 320 C 320 370, 390 440, 370 510 C 350 560, 480 640, 580 630" fill="none" stroke="#c0d0eb" stroke-linecap="round" stroke-width="4"></path>
+<!-- Sardar Patel Road -->
+<path d="M 370 510 L 520 510 L 670 480" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-width="8"></path>
+<path d="M 370 510 L 520 510 L 670 480" fill="none" stroke="#b2c6e6" stroke-linecap="round" stroke-width="4"></path>
+<text fill="#386380" font-size="10" font-weight="600" x="480" y="502">SARDAR PATEL RD</text>
+<!-- Area Text Markers -->
+<text fill="#8898aa" font-size="13" font-weight="700" x="590" y="190">T. NAGAR</text>
+<text fill="#8898aa" font-size="13" font-weight="700" x="320" y="470">GUINDY</text>
+<text fill="#8898aa" font-size="13" font-weight="700" x="640" y="450">ADYAR</text>
+<text fill="#8898aa" font-size="13" font-weight="700" x="520" y="660">VELACHERY</text>
+<text fill="#8898aa" font-size="13" font-weight="700" x="730" y="660">THORAIPAKKAM</text>
+<text fill="#8898aa" font-size="12" font-weight="600" x="160" y="730">MEENAMBAKKAM (MAA)</text>
+<!-- Practical 125 km Reachability Range Envelope (Subtle dotted perimeter) -->
+<circle cx="410" cy="495" fill="url(#reachabilityGradient)" r="290" stroke="#006a3b" stroke-dasharray="6 4" stroke-opacity="0.4" stroke-width="1.5"></circle>
+<text fill="#006a3b" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle" x="410" y="215">
+          PRACTICAL 125 KM SAFE RETURN RADIUS (62% SoC)
+        </text>
+<!-- Live Vehicle Position Marker (Guindy Race Course Rd) -->
+<g transform="translate(410, 495)">
+<!-- Pulse Ring -->
+<circle cx="0" cy="0" fill="#00864b" fill-opacity="0.2" r="22">
+<animate attributename="r" dur="2.5s" repeatcount="indefinite" values="16;32;16"></animate>
+<animate attributename="fill-opacity" dur="2.5s" repeatcount="indefinite" values="0.28;0.05;0.28"></animate>
+</circle>
+<circle cx="0" cy="0" fill="#006a3b" r="13" stroke="#ffffff" stroke-width="2.5"></circle>
+<!-- Car Silhouette representation in center -->
+<circle cx="0" cy="0" fill="#ffffff" r="4"></circle>
+<!-- Vehicle Label Pill -->
+<g filter="url(#mapShadow)" transform="translate(18, -12)">
+<rect fill="#111c2d" height="26" rx="13" width="186" x="0" y="0"></rect>
+<circle cx="12" cy="13" fill="#81faad" r="4"></circle>
+<text fill="#ffffff" font-size="11" font-weight="600" x="22" y="17">You: Guindy Race Course Rd</text>
+</g>
+</g>
+<!-- STATION MARKERS -->
+<!-- Marker 1: Chennai EV Hub - Guindy (Active/Selected) -->
+<g filter="url(#mapShadow)" transform="translate(370, 440)">
+<!-- Connecting Stem -->
+<path d="M 0 0 L 0 10" stroke="#006a3b" stroke-width="3"></path>
+<!-- Pill Badge -->
+<rect fill="#006a3b" height="34" rx="17" width="130" x="-65" y="-34"></rect>
+<circle cx="-47" cy="-17" fill="#ffffff" r="10"></circle>
+<path d="M -49 -21 L -45 -17 L -47 -17 L -45 -13 L -49 -17 L -47 -17 Z" fill="#006a3b" stroke="#006a3b" stroke-linejoin="round" stroke-width="1.5"></path>
+<text fill="#ffffff" font-size="11" font-weight="700" x="-30" y="-19">₹18 • 4 Free</text>
+<text fill="#81faad" font-size="9" font-weight="600" x="-30" y="-7">60 kW DC</text>
+</g>
+<!-- Marker 2: T Nagar Express (Available) -->
+<g class="cursor-pointer" filter="url(#mapShadow)" transform="translate(560, 240)">
+<rect fill="#ffffff" height="30" rx="15" stroke="#006a3b" stroke-width="2" width="110" x="-55" y="-30"></rect>
+<circle cx="-40" cy="-15" fill="#81faad" r="7"></circle>
+<text fill="#111c2d" font-size="11" font-weight="700" x="-26" y="-17">₹19 • 2 Free</text>
+<text fill="#3e4a40" font-size="9" font-weight="500" x="-26" y="-6">T Nagar • 50 kW</text>
+</g>
+<!-- Marker 3: OMR Cyber Gateway (Available Supercharger) -->
+<g class="cursor-pointer" filter="url(#mapShadow)" transform="translate(695, 630)">
+<rect fill="#ffffff" height="30" rx="15" stroke="#5f3add" stroke-width="2" width="120" x="-60" y="-30"></rect>
+<circle cx="-45" cy="-15" fill="#cabeff" r="7"></circle>
+<text fill="#111c2d" font-size="11" font-weight="700" x="-32" y="-17">₹21 • 6 Free</text>
+<text fill="#5f3add" font-size="9" font-weight="700" x="-32" y="-6">OMR • 120 kW</text>
+</g>
+<!-- Marker 4: Velachery Phoenix (Occupied) -->
+<g class="cursor-pointer" filter="url(#mapShadow)" transform="translate(530, 620)">
+<rect fill="#ffffff" height="30" rx="15" stroke="#ba1a1a" stroke-width="2" width="116" x="-58" y="-30"></rect>
+<circle cx="-44" cy="-15" fill="#ffdad6" r="7"></circle>
+<text fill="#ba1a1a" font-size="11" font-weight="700" x="-30" y="-17">Occupied (0/4)</text>
+<text fill="#6d7a6f" font-size="9" font-weight="500" x="-30" y="-6">~18m Wait</text>
+</g>
+<!-- Marker 5: Adyar Coastal Hub (Limited) -->
+<g class="cursor-pointer" filter="url(#mapShadow)" transform="translate(680, 470)">
+<rect fill="#ffffff" height="30" rx="15" stroke="#386380" stroke-width="2" width="104" x="-52" y="-30"></rect>
+<circle cx="-38" cy="-15" fill="#c9e6ff" r="7"></circle>
+<text fill="#111c2d" font-size="11" font-weight="700" x="-25" y="-17">₹16 • 1 Free</text>
+<text fill="#386380" font-size="9" font-weight="500" x="-25" y="-6">Adyar • 22 kW</text>
+</g>
+</svg>
+<!-- FLOATING OVERLAY: Station Live Bay Status Card (Over Chennai EV Hub) -->
+<div class="absolute top-6 left-6 max-w-sm w-full bg-surface-container-lowest rounded-2xl shadow-xl p-space-md z-30 transition-all">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary font-bold">LIVE BAY MONITORED</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Chennai EV Hub - Guindy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SIDCO Industrial Estate, Guindy</p>
+</div>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- 4-Bay Visual Status Strip -->
+<div class="mt-space-sm mb-space-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-1.5">
+<span>Real-time Charger Bays</span>
+<span class="font-semibold text-primary">Bay 1 &amp; Bay 3 Recommended</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5">
+<!-- Bay 1 -->
+<div class="p-2 rounded-xl bg-primary-fixed text-on-primary-fixed flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm font-bold">Bay 1</span>
+<span class="font-body-sm text-body-sm font-semibold">60 kW</span>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 mt-0.5 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Free
+              </span>
+</div>
+<!-- Bay 2 -->
+<div class="p-2 rounded-xl bg-surface-container-high text-on-surface-variant flex flex-col items-center justify-center text-center opacity-80">
+<span class="font-label-sm text-label-sm font-bold">Bay 2</span>
+<span class="font-body-sm text-body-sm">60 kW</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">In Use (84%)</span>
+</div>
+<!-- Bay 3 -->
+<div class="p-2 rounded-xl bg-primary-fixed text-on-primary-fixed flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm font-bold">Bay 3</span>
+<span class="font-body-sm text-body-sm font-semibold">60 kW</span>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 mt-0.5 font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Free
+              </span>
+</div>
+<!-- Bay 4 -->
+<div class="p-2 rounded-xl bg-surface-container-high text-on-surface-variant flex flex-col items-center justify-center text-center opacity-80">
+<span class="font-label-sm text-label-sm font-bold">Bay 4</span>
+<span class="font-body-sm text-body-sm">22 kW</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">In Use</span>
+</div>
+</div>
+</div>
+<!-- Amenities Chips -->
+<div class="flex items-center gap-2 my-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[15px] text-secondary">local_cafe</span> Cafe
+          </span>
+<span class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[15px] text-secondary">wc</span> Restroom
+          </span>
+<span class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[15px] text-secondary">security</span> 24/7 Guard
+          </span>
+<span class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[15px] text-secondary">wifi</span> Free Wi-Fi
+          </span>
+</div>
+<!-- Dynamic Tariff Notice -->
+<div class="p-2 rounded-xl bg-surface-container-low flex items-center justify-between font-label-sm text-label-sm mb-3">
+<span class="text-on-surface-variant">Standard Tariff (TANGEDCO Grid)</span>
+<span class="font-bold text-on-surface">₹18.00 / kWh</span>
+</div>
+<!-- Call to Action -->
+<div class="flex items-center gap-2">
+<button class="flex-1 h-11 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition-all">
+<span class="material-symbols-outlined text-[20px]">flash_on</span>
+<span>Select &amp; Book Bay 1</span>
+</button>
+<button class="h-11 w-11 bg-surface-container-high hover:bg-surface-container-highest text-on-surface rounded-xl flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</div>
+<!-- FLOATING MAP CONTROLS (Right Edge) -->
+<div class="absolute right-6 top-6 flex flex-col gap-2 z-20">
+<!-- Layer Switchers -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-1 flex flex-col gap-1">
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" title="Toggle Traffic Layer">
+<span class="material-symbols-outlined text-[20px] text-primary">traffic</span>
+</button>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" title="Satellite View">
+<span class="material-symbols-outlined text-[20px] text-secondary">satellite_alt</span>
+</button>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" title="Range Contour Lines">
+<span class="material-symbols-outlined text-[20px] text-tertiary">polyline</span>
+</button>
+</div>
+<!-- Zoom Controls -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-1 flex flex-col gap-1">
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">add</span>
+</button>
+<div class="h-[1px] bg-surface-container-high mx-2"></div>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">remove</span>
+</button>
+</div>
+<!-- Recenter on Vehicle Location -->
+<button class="w-10 h-10 bg-surface-container-lowest hover:bg-surface-container-high text-primary rounded-xl shadow-md flex items-center justify-center transition-colors" title="Center on Nexon EV">
+<span class="material-symbols-outlined text-[22px]">my_location</span>
+</button>
+</div>
+<!-- MAP BOTTOM FLOATING BAR: Route Quick Summary -->
+<div class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none z-20">
+<!-- Live Corridor Traffic Indicator -->
+<div class="pointer-events-auto bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-2 rounded-xl shadow-md flex items-center gap-space-sm text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-semibold text-on-surface">Anna Salai: Flowing</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-semibold text-on-surface">Velachery Bypass: Slow (+8m)</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant">Updated 1 min ago</span>
+</div>
+<!-- Legend Overlay -->
+<div class="pointer-events-auto hidden md:flex items-center gap-space-sm bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-2 rounded-xl shadow-md text-label-sm font-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Available
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Limited
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span> Occupied
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> Ultra DC Fast
+          </span>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

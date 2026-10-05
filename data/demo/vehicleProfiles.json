@@ -1,0 +1,53 @@
+[
+  {
+    "id": "veh_01",
+    "name": "Tata Nexon EV Max",
+    "model": "XZ+ Lux 2024",
+    "registration": "TN 09 BK 4521",
+    "batteryCapacityKwh": 40.5,
+    "currentSoc": 62,
+    "preferredConnector": "CCS2",
+    "preferredChargingType": "DC Fast",
+    "maxAcChargeRateKw": 7.2,
+    "maxDcChargeRateKw": 50.0,
+    "consumptionWhPerKm": 145,
+    "sohHealthPercent": 98,
+    "packTempC": 31.4,
+    "tyrePressurePsi": 34.2,
+    "currentLocation": "Anna Nagar, Chennai"
+  },
+  {
+    "id": "veh_02",
+    "name": "MG ZS EV",
+    "model": "Exclusive Pro",
+    "registration": "TN 07 CM 8890",
+    "batteryCapacityKwh": 50.3,
+    "currentSoc": 28,
+    "preferredConnector": "CCS2",
+    "preferredChargingType": "DC Fast",
+    "maxAcChargeRateKw": 7.4,
+    "maxDcChargeRateKw": 60.0,
+    "consumptionWhPerKm": 160,
+    "sohHealthPercent": 99,
+    "packTempC": 30.1,
+    "tyrePressurePsi": 35.0,
+    "currentLocation": "Guindy SIDCO, Chennai"
+  },
+  {
+    "id": "veh_03",
+    "name": "Ather 450X",
+    "model": "Gen 3 Pro",
+    "registration": "TN 10 DX 1044",
+    "batteryCapacityKwh": 3.7,
+    "currentSoc": 82,
+    "preferredConnector": "LEV DC",
+    "preferredChargingType": "DC Fast",
+    "maxAcChargeRateKw": 1.2,
+    "maxDcChargeRateKw": 3.3,
+    "consumptionWhPerKm": 35,
+    "sohHealthPercent": 97,
+    "packTempC": 29.5,
+    "tyrePressurePsi": 30.0,
+    "currentLocation": "Adyar, Chennai"
+  }
+]
